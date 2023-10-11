@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-hostname-svc
+spec:
+  selector:
+    application: {{ .Release.Name }}-hostname          
+  ports:
+    - protocol: TCP                                      # Protocol used for the Service (TCP in this case)
+      port: {{ .Values.ports.lb_port }}                  # Port on the Service through which traffic is exposed
+      targetPort: {{ .Values.ports.container_port }}     # Port on the Service through which traffic is exposed

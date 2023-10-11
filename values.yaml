@@ -1,0 +1,34 @@
+replicaCount: 2
+
+containers:
+  image: 548844171305.dkr.ecr.us-east-1.amazonaws.com/private-ecr-test
+  tag: v0.4.1
+  
+ports:
+  container_port: 5000
+  lb_port: 80
+
+
+host: test.am
+ 
+items:
+  - name: POSTGRES_HOST
+    extname: postgres-secrets-manager
+    key: POSTGRES_HOST
+
+  - name: POSTGRES_PORT
+    extname: postgres-secrets-manager
+    key: POSTGRES_PORT
+
+  - name: POSTGRES_DATABASE
+    extname: postgres-secrets-manager
+    key: POSTGRES_DATABASE
+
+  - name: POSTGRES_USER
+    extname: postgres-secrets-manager
+    key: POSTGRES_USER
+
+  - name: POSTGRES_PASSWORD
+    extname: postgres-secrets-manager
+    key: POSTGRES_PASSWORD
+
