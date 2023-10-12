@@ -24,6 +24,6 @@ spec:
             - name: {{ .name }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ .extname }}
+                  name: {{ .yoursecret }}
                   key: {{ .key }}
         {{- end }}             
