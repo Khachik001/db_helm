@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-deploy  # Define the name of the Deployment
+  annotations:
+    {{- toYaml .Values.deploymentAnnotations | nindent 4 }}
   labels:
     type: deployment    #Label to identify this resource as a deployment
 spec: 

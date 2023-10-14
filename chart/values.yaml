@@ -7,7 +7,9 @@ containers:
 ports:
   container_port: 5000
   lb_port: 80
-
+  
+deploymentAnnotations:
+  secret.reloader.stakater.com/reload: postgres-secrets-manager
 
 host: test.am
  
