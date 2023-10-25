@@ -1,4 +1,4 @@
-replicaCount: 20
+replicaCount: 40
 
 containers:
   image: 548844171305.dkr.ecr.us-east-1.amazonaws.com/private-ecr-test
